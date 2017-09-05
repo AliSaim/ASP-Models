@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Tut1.Models.Employee>
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+	<link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+	
+		<h3>@ViewBag.Message</h3>
+		<h3>@ViewBag.Message</h3>
+		Hello, this is the index view of the test controller
+
+
+
+		<h2>This is another table using models</h2>
+		<table class="table table-striped">
+			<tr>
+				<th>ID:</th>
+				<th>Name:</th>
+				<th>Department:</th>
+			</tr>
+			<tbody>
+				@if (Model != null)
+				{
+					foreach (var item in Model)
+					{
+						<tr>
+							<td>@item.EmployeeID</td>
+							<td>@item.Name</td>
+							<td>@item.Department</td>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+
+
+		
+    </div>
+</body>
+</html>
